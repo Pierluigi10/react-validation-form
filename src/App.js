@@ -1,6 +1,11 @@
+import { useState } from "react";
 import "./App.scss";
 
 function App() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [payload, setPayload] = useState({});
+
   return (
     <div className="App">
       <form>
