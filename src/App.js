@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import "./App.scss";
 
 function App() {
@@ -9,6 +9,11 @@ function App() {
   const [phoneIsValid, setPhoneIsValid] = useState(false);
   const [nameIsValid, setNameIsValid] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
+
+
+  useEffect(() => {
+    setFormIsValid(nameIsValid && phoneIsValid);
+}, [nameIsValid, phoneIsValid])
 
   const clearPayload = () => {
     setPayload((prev) => ({}));
