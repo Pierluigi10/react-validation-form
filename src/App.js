@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 
 function App() {
@@ -10,10 +10,9 @@ function App() {
   const [nameIsValid, setNameIsValid] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
 
-
   useEffect(() => {
     setFormIsValid(nameIsValid && phoneIsValid);
-}, [nameIsValid, phoneIsValid])
+  }, [nameIsValid, phoneIsValid]);
 
   const clearPayload = () => {
     setPayload((prev) => ({}));
@@ -74,8 +73,10 @@ function App() {
             e.g. 555-333-2222
           </div>
 
-          <div className="buttonRow" onClick={handleButton}>
-            <button>Register</button>
+          <div className="buttonRow">
+            <button disabled={!formIsValid} onClick={handleButton}>
+              Register
+            </button>
           </div>
         </fieldset>
       </form>
