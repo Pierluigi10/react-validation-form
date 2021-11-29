@@ -27,7 +27,13 @@ function App() {
 
   const handlePhone = (e) => {
     let _phone = e.target.value;
+    if (_phone !== "" && /^\d\d\d-\d\d\d-\d\d\d\d$/.test(_phone)) {
+      setPhoneIsValid(true);
+    } else {
+      setPhoneIsValid(false);
+    }
     setPhone(_phone);
+    clearPayload();
   };
 
   const handleButton = (e) => {
@@ -38,27 +44,31 @@ function App() {
       phone,
     }));
   };
-
   return (
     <div className="App">
-      {/* [{phone}] */}
-      {/* [{nameIsValid.toString()}] */}
       <form>
         <fieldset>
           <legend>Order Form</legend>
-          <div className="row">
+          <div className={"row " + (nameIsValid ? "valid" : "invalid")}>
             <label htmlFor="name">Name</label>
             <input type="text" id="name" value={name} onChange={handleName} />
           </div>
-          <div className="note">required, maximum 10 characters</div>
-
-          <div className="row">
-            <label htmlFor="phone" value={phone} onChange={handlePhone}>
-              Phone
-            </label>
-            <input type="text" id="name" />
+          <div className={"note " + (nameIsValid ? "valid" : "invalid")}>
+            required, maximum 10 characters
           </div>
-          <div className="note">e.g. 555-333-2222</div>
+          <div className={"row " + (phoneIsValid ? "valid" : "invalid")}>
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="text"
+              id="phone"
+              onChange={handlePhone}
+              value={phone}
+            />
+          </div>
+          <div className={"note " + (phoneIsValid ? "valid" : "invalid")}>
+            e.g. 555-333-2222
+          </div>
+
           <div className="buttonRow" onClick={handleButton}>
             <button>Register</button>
           </div>
