@@ -6,6 +6,10 @@ function App() {
   const [phone, setPhone] = useState("");
   const [payload, setPayload] = useState({});
 
+  const [phoneIsValid, setPhoneIsValid] = useState(false);
+  const [nameIsValid, setNameIsValid] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false);
+
   const clearPayload = () => {
     setPayload((prev) => ({}));
   };
@@ -19,7 +23,6 @@ function App() {
   const handlePhone = (e) => {
     let _phone = e.target.value;
     setPhone(_phone);
-    
   };
 
   const handleButton = (e) => {
