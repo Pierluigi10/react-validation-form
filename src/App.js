@@ -42,6 +42,7 @@ function App() {
   return (
     <div className="App">
       {/* [{phone}] */}
+      {/* [{nameIsValid.toString()}] */}
       <form>
         <fieldset>
           <legend>Order Form</legend>
@@ -63,7 +64,6 @@ function App() {
           </div>
         </fieldset>
       </form>
-
       {Object.keys(payload).length !== 0 && (
         <pre>payload: {JSON.stringify(payload, null, 2)}</pre>
       )}
