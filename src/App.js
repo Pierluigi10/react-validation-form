@@ -6,6 +6,12 @@ function App() {
   const [phone, setPhone] = useState("");
   const [payload, setPayload] = useState({});
 
+
+  const handleName = (e) => {
+    let _name = e.target.value;
+    setName(_name);
+}
+
   return (
     <div className="App">
       <form>
@@ -13,7 +19,7 @@ function App() {
           <legend>Order Form</legend>
           <div className="row">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" />
+            <input type="text" id="name" value={name} onChange={handleName}/>
           </div>
           <div className="note">required, maximum 10 characters</div>
 
