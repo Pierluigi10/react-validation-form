@@ -16,6 +16,11 @@ function App() {
 
   const handleName = (e) => {
     let _name = e.target.value;
+    if (_name !== "" && _name.length <= 10) {
+      setNameIsValid(true);
+    } else {
+      setNameIsValid(false);
+    }
     setName(_name);
     clearPayload();
   };
