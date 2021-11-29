@@ -13,12 +13,13 @@ function App() {
   const handleName = (e) => {
     let _name = e.target.value;
     setName(_name);
+    clearPayload();
   };
 
   const handlePhone = (e) => {
     let _phone = e.target.value;
     setPhone(_phone);
-    clearPayload();
+    
   };
 
   const handleButton = (e) => {
