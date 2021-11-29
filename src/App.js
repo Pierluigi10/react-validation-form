@@ -1,24 +1,27 @@
-import './App.scss';
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-		<form>
-    <fieldset>
-        <legend>Order Form</legend>
-        <div className="row">
+      <form>
+        <fieldset>
+          <legend>Order Form</legend>
+          <div className="row">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name"/>
-        </div>
-        <div className="row">
+            <input type="text" id="name" />
+          </div>
+          <div className="note">required, maximum 10 characters</div>
+
+          <div className="row">
             <label htmlFor="phone">Phone</label>
-            <input type="text" id="name"/>
-        </div>
-        <div className="buttonRow">
+            <input type="text" id="name" />
+          </div>
+          <div className="note">e.g. 555-333-2222</div>
+          <div className="buttonRow">
             <button>Register</button>
-        </div>
-    </fieldset>
-</form>
+          </div>
+        </fieldset>
+      </form>
     </div>
   );
 }
