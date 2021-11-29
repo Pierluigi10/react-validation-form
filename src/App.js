@@ -6,6 +6,10 @@ function App() {
   const [phone, setPhone] = useState("");
   const [payload, setPayload] = useState({});
 
+  const clearPayload = () => {
+    setPayload((prev) => ({}));
+  };
+
   const handleName = (e) => {
     let _name = e.target.value;
     setName(_name);
@@ -14,6 +18,7 @@ function App() {
   const handlePhone = (e) => {
     let _phone = e.target.value;
     setPhone(_phone);
+    clearPayload();
   };
 
   const handleButton = (e) => {
@@ -51,10 +56,8 @@ function App() {
       </form>
 
       {Object.keys(payload).length !== 0 && (
-    <pre>
-        payload: {JSON.stringify(payload, null, 2)}
-    </pre>
-)}
+        <pre>payload: {JSON.stringify(payload, null, 2)}</pre>
+      )}
     </div>
   );
 }
